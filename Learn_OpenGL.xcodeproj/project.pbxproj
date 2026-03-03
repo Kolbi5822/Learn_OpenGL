@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D0368CB62F5684EE006CBD17 /* libglfw.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D0368CB52F5684EE006CBD17 /* libglfw.3.dylib */; };
+		D0368CB82F5684FD006CBD17 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0368CB72F5684FC006CBD17 /* OpenGL.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		D0368CA02F568352006CBD17 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -20,6 +25,8 @@
 
 /* Begin PBXFileReference section */
 		D0368CA22F568352006CBD17 /* Learn_OpenGL */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Learn_OpenGL; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0368CB52F5684EE006CBD17 /* libglfw.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.dylib; path = "../../../Downloads/glfw-3.4.bin.MACOS/lib-arm64/libglfw.3.dylib"; sourceTree = "<group>"; };
+		D0368CB72F5684FC006CBD17 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -35,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0368CB82F5684FD006CBD17 /* OpenGL.framework in Frameworks */,
+				D0368CB62F5684EE006CBD17 /* libglfw.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +55,7 @@
 			children = (
 				D0368CA42F568352006CBD17 /* Learn_OpenGL */,
 				D0368CA32F568352006CBD17 /* Products */,
+				D0368CB42F5684EE006CBD17 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,6 +65,15 @@
 				D0368CA22F568352006CBD17 /* Learn_OpenGL */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D0368CB42F5684EE006CBD17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0368CB72F5684FC006CBD17 /* OpenGL.framework */,
+				D0368CB52F5684EE006CBD17 /* libglfw.3.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +264,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include,
+					"$(PROJECT_DIR)/Learn_OpenGL/include",
+				);
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -253,6 +277,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				HEADER_SEARCH_PATHS = (
+					/opt/homebrew/include,
+					"$(PROJECT_DIR)/Learn_OpenGL/include",
+				);
+				LIBRARY_SEARCH_PATHS = /opt/homebrew/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
